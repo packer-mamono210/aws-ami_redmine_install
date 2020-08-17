@@ -32,8 +32,10 @@ jobs:
           name: Install Ansible
           command: pip3 install ansible
       - run:
-          name: Get Ansible Playbook
-          command: git clone https://github.com/ansible-playbooks-centos7/redmine_install.git
+          name: Get Ansible Playbooks
+          command: |
+            git clone https://github.com/ansible-playbooks-centos7/redmine_install.git
+            git clone https://github.com/ansible-playbooks-centos7/system.git
       - run:
           name: Get AMI ID
           command: |
