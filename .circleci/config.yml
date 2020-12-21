@@ -28,12 +28,12 @@ jobs:
       - run:
           name: Packer build
           command: |
-            TAG_NAME="redmine `date --date \"9 hours\" \"+%Y-%m-%d %H:%M:%S UTC+9\"`"
+            TAG_NAME="redmine_golden_image `date --date \"9 hours\" \"+%Y-%m-%d %H:%M:%S UTC+9\"`"
 
             packer build \
             -var "aws_access_key=${AWS_ACCESS_KEY_ID}" \
-            -var "aws_secret_key=${AWS_SECRET_ACCESS_KEY}" \
             -var "aws_region=${AWS_DEFAULT_REGION}" \
+            -var "aws_secret_key=${AWS_SECRET_ACCESS_KEY}" \
             -var "tag_name=${TAG_NAME}" \
             build.json
 
