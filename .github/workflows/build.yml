@@ -1,5 +1,11 @@
 name: build
-on: [deployment, push]
+on:
+  push:
+    paths-ignore:
+      - 'README.md'
+  deployment:
+    branches:
+      - master
 
 jobs:
   pakcer:
